@@ -1,9 +1,11 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import {View, Image, Text, StyleSheet} from 'react-native';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 const HomeScreen = () => {
   return (
-    <View style = {styles.page}>
+    <View style={styles.page}>
       {/*render product components */}
 
       <View style={styles.root}>
@@ -11,12 +13,24 @@ const HomeScreen = () => {
           style={styles.image}
           source={{
             uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/cleanarchitecture.jpg',
-          }}></Image>
+          }}
+        />
 
         <View style={styles.rightContainer}>
-          <Text style={styles.title} numberOfLines= {3} >Logitech MX Master 3 Advanced Wireless Mouse for Mac - Bluetooth/USB
+          <Text style={styles.title} numberOfLines={3}>
+            Logitech MX Master 3 Advanced Wireless Mouse for Mac - Bluetooth/USB
           </Text>
           {/* ratings */}
+          <View style={styles.ratingsContainer}>
+            <FontAwesome style = {styles.star} name="star" size={18} color={'e47911'} />
+            <FontAwesome style = {styles.star} name="star" size={18} color={'e47911'} />
+            <FontAwesome style = {styles.star} name="star" size={18} color={'e47911'} />
+            <FontAwesome style = {styles.star} name="star-half-full" size={18} color={'e47911'} />
+            <FontAwesome style = {styles.star} name="star-o" size={18} color={'e47911'} />
+
+            <Text> 13,032</Text>
+          </View>
+
           <Text style={styles.price}> From $13.59</Text>
         </View>
       </View>
@@ -25,10 +39,10 @@ const HomeScreen = () => {
 };
 
 const styles = StyleSheet.create({
-   page:{
-      padding: 10
+  page: {
+    padding: 10,
   },
-  
+
   root: {
     flexDirection: 'row',
     borderWidth: 1,
@@ -49,11 +63,20 @@ const styles = StyleSheet.create({
   },
 
   title: {
-      fontSize: 18
+    fontSize: 18,
   },
   price: {},
 
- 
+  ratingsContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical : 5,
+  },
+
+  star: {
+    margin: 2,
+    color: 'orange',
+  },
 });
 
 export default HomeScreen;
