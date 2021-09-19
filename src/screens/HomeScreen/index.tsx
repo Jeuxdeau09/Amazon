@@ -31,7 +31,10 @@ const HomeScreen = () => {
             <Text> 13,032</Text>
           </View>
 
-          <Text style={styles.price}> From $13.59</Text>
+          <Text style={styles.price}>
+             From $13.59
+          <Text style= {styles.oldPrice}> $16.22 </Text>
+          </Text>
         </View>
       </View>
     </View>
@@ -76,6 +79,13 @@ const styles = StyleSheet.create({
   star: {
     margin: 2,
     color: 'orange',
+  },
+
+  oldPrice: {
+    fontSize: 12,
+    fontWeight: 'normal',
+    paddingLeft: 5 ,
+    textDecorationLine: 'line-through',
   },
 });
 
