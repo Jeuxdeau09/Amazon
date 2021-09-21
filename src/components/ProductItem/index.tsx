@@ -26,39 +26,19 @@ const ProductItem = ({item}: ProductItemProps) => {
       />
 
       <View style={styles.rightContainer}>
-        <Text style={styles.title} numberOfLines={3}> {item.title} </Text>
-        
+        <Text style={styles.title} numberOfLines={3}>
+          {' '}
+          {item.title}{' '}
+
         <View style={styles.ratingsContainer}>
-          <FontAwesome
-            style={styles.star}
-            name="star"
-            size={18}
-            color={'e47911'}
-          />
-          <FontAwesome
-            style={styles.star}
-            name="star"
-            size={18}
-            color={'e47911'}
-          />
-          <FontAwesome
-            style={styles.star}
-            name="star"
-            size={18}
-            color={'e47911'}
-          />
-          <FontAwesome
-            style={styles.star}
-            name="star-half-full"
-            size={18}
-            color={'e47911'}
-          />
-          <FontAwesome
-            style={styles.star}
-            name="star-o"
-            size={18}
-            color={'e47911'}
-          />
+          {[0, 0, 0, 0, 0].map((el, i) => (
+            <FontAwesome
+              style={styles.star}
+              name={i < Math.floor(item.avgRating) ? 'star' : 'star-o'}
+              size={18}
+              color={'e47911'}
+            />
+          ))}
 
           <Text> {item.ratings}</Text>
         </View>
@@ -66,7 +46,8 @@ const ProductItem = ({item}: ProductItemProps) => {
         <Text style={styles.price}>
           From ${item.price}
           {item.oldPrice && (
-          <Text style={styles.oldPrice}> ${item.oldPrice} </Text>)}
+            <Text style={styles.oldPrice}> ${item.oldPrice} </Text>
+          )}
         </Text>
       </View>
     </View>
