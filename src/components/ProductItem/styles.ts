@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     title: {
       fontSize: 18,
     },
-    price: {},
+
   
     ratingsContainer: {
       flexDirection: 'row',
@@ -38,6 +38,11 @@ const styles = StyleSheet.create({
       color: 'orange',
     },
   
+    price: {
+      fontSize: 18,
+      fontWeight: 'bold',
+    },
+
     oldPrice: {
       fontSize: 12,
       fontWeight: 'normal',
