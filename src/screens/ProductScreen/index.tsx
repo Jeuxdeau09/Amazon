@@ -1,5 +1,10 @@
 import React, {useState} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Button} from 'react-native';
+
+
+import Buttons from '../../components/Button';
+
+import QuantitySelector from '../../components/QuantitySelector';
 
 import styles from './styles';
 import product from '../../data/product';
@@ -8,6 +13,7 @@ import {Picker} from '@react-native-picker/picker';
 
 const ProductScreen = () => {
   const [selectedOption, setSelectedOption] = useState('');
+  const [Quantity, setQuantity] = useState(1);
 
   return (
     <View>
@@ -39,7 +45,18 @@ const ProductScreen = () => {
 
       {/* QTY selector*/}
 
+      <QuantitySelector Quantity = {Quantity} setQuantity = {setQuantity}/>
+
       {/* Buttons*/}
+    <Buttons
+    text = {"Add to cart"}
+    onPress = {() => console.warn('add to cart') } />
+
+    <Buttons 
+    text = {"Buy Now"}
+    onPress = {() => console.warn('buy now') }/>
+
+
     </View>
   );
 };
