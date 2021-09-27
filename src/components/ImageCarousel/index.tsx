@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Image,
@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 
 const ImageCarousel = ({images}: {images: [string]}) => {
+  const [activeIndex, setActiveIndex] = useState(0);
   const windowWidth = useWindowDimensions().width;
 
   return (
@@ -25,7 +26,25 @@ const ImageCarousel = ({images}: {images: [string]}) => {
         snapToInterval={windowWidth - 20}
         snapToAlignment={'center'}
         decelerationRate={'fast'}
+        viewabilityConfig={{
+          viewAreaCoveragePercentThreshold: 50,
+        }}
+        onViewableItemsChanged={({viewableItems}) => {
+          console.log(viewableItems);
+        }}
       />
+      <View style={styles.dots}>
+        {images.map((image, index) => (
+          <View
+            style={[
+              styles.dot,
+              {
+                backgroundColor: index === activeIndex ? '#c9c9c9' : '#ededed',
+              },
+            ]}
+          />
+        ))}
+      </View>
     </View>
   );
 };
@@ -37,6 +56,21 @@ const styles = StyleSheet.create({
     height: 250,
     resizeMode: 'contain',
     margin: 10,
+  },
+
+  dot: {
+    width: 10,
+    height: 10,
+    borderRadius: 25,
+    borderWidth: 1,
+    borderColor: '#c9c9c9',
+    margin: 5,
+    backgroundColor: '#ededed',
+  },
+
+  dots: {
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
 });
 
