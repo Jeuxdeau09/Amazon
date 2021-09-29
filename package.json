@@ -12,9 +12,11 @@
   },
   "dependencies": {
     "@react-native-picker/picker": "^2.1.0",
+    "country-list": "^2.2.0",
     "react": "17.0.2",
     "react-native": "0.65.1",
-    "react-native-vector-icons": "^8.1.0"
+    "react-native-vector-icons": "^8.1.0",
+    "react-select-country-list": "^2.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
