@@ -18,6 +18,8 @@ import {
 
 import ShoppingCartScreen from './src/screens/ShoppingCartScreen';
 
+import AddressScreen from './src/screens/AddressScreen';
+
 
 import {
   Colors,
@@ -36,7 +38,7 @@ const App = () => {
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       
-      <ShoppingCartScreen />
+      <AddressScreen />
     </SafeAreaView>
   );
 };
