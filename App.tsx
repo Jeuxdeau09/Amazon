@@ -16,6 +16,8 @@ import {
   useColorScheme,
 } from 'react-native';
 
+import ShoppingCartScreen from './src/screens/ShoppingCartScreen';
+
 
 import {
   Colors,
@@ -34,7 +36,7 @@ const App = () => {
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       
-      <ProductScreen />
+      <ShoppingCartScreen />
     </SafeAreaView>
   );
 };

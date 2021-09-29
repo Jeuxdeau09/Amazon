@@ -1,14 +1,13 @@
 import React from 'react';
 import {View, Text, Pressable, StyleSheet} from 'react-native';
 
-const QuantitySelector = ({Quantity, setQuantity}) => {
-    
+const QuantitySelector = ({quantity, setQuantity}) => {
   const onMinus = () => {
-      setQuantity(Math.max(0,Quantity-1));
+    setQuantity(Math.max(0,quantity - 1));
   };
 
   const onPlus = () => {
-    setQuantity(Quantity+1);
+    setQuantity(quantity + 1);
   };
 
   return (
@@ -17,7 +16,7 @@ const QuantitySelector = ({Quantity, setQuantity}) => {
         <Text style={styles.buttonText}> - </Text>
       </Pressable>
 
-      <Text style={styles.quantity}> {Quantity} </Text>
+      <Text style={styles.quantity}> {quantity} </Text>
 
       <Pressable onPress={onPlus} style={styles.button}>
         <Text style={styles.buttonText}> + </Text>
@@ -34,20 +33,19 @@ const styles = StyleSheet.create({
     borderColor: '#e3e3e3',
     width: 100,
     justifyContent: 'space-between',
-    
   },
   button: {
     width: 25,
     height: 25,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#d1d1d1'
+    backgroundColor: '#d1d1d1',
   },
   buttonText: {
-      fontSize: 18,
+    fontSize: 18,
   },
   quantity: {
-      color: '#007eb9'
+    color: '#007eb9',
   },
 });
 

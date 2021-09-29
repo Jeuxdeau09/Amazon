@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, Button} from 'react-native';
+import {View, Text, Button, ScrollView} from 'react-native';
 
 import Buttons from '../../components/Button';
 
@@ -14,15 +14,15 @@ import ImageCarousel from '../../components/ImageCarousel';
 
 const ProductScreen = () => {
   const [selectedOption, setSelectedOption] = useState('');
-  const [Quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(1);
 
   return (
-    <View style={styles.root}>
+    <ScrollView style={styles.root}>
       <Text style={styles.title}>{product.title}</Text>
 
       {/* Image carousel */}
 
-      <ImageCarousel images = {product.images} />
+      <ImageCarousel images={product.images} />
 
       {/* Option Selector */}
       <Picker
@@ -47,7 +47,7 @@ const ProductScreen = () => {
 
       {/* QTY selector*/}
 
-      <QuantitySelector Quantity={Quantity} setQuantity={setQuantity} />
+      <QuantitySelector Quantity={quantity} setQuantity={setQuantity} />
 
       {/* Buttons*/}
       <Buttons
@@ -56,7 +56,7 @@ const ProductScreen = () => {
       />
 
       <Buttons text={'Buy Now'} onPress={() => console.warn('buy now')} />
-    </View>
+    </ScrollView>
   );
 };
 

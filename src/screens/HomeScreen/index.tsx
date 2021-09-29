@@ -1,8 +1,7 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import {View, FlatList, StyleSheet} from 'react-native';
 import ProductItem from '../../components/ProductItem';
-
+import QuantitySelector from '../../components/QuantitySelector';
 import products from '../../data/products';
 
 
