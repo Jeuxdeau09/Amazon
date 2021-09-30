@@ -1,9 +1,32 @@
-import { StyleSheet } from "react-native" ;
+import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-    row:{
+  root: {
+    padding: 10,
+  },
 
-    },
+  row: {
+    marginVertical: 5,
+  },
+
+  label: {
+    fontWeight: 'bold',
+  },
+
+  input: {
+    backgroundColor: 'white',
+    height: 40,
+    padding: 5,
+    marginVertical: 5,
+    borderWidth: 1,
+    borderColor: 'black',
+    borderRadius: 3,
+  },
+
+  errorLabel: {
+    color: 'red',
+  },
+
 });
 
 export default styles;
