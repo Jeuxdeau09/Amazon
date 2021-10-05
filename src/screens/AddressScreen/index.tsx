@@ -8,6 +8,7 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
+
 import {Picker} from '@react-native-picker/picker';
 import styles from './styles';
 import countryList from 'country-list';

@@ -1,7 +1,14 @@
 import React from 'react';
-import {View, Image, Text} from 'react-native';
+import {
+  View,
+  Image,
+  Text,
+  Pressable,
+  NativeAppEventEmitter,
+} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
+import {useNavigation} from '@react-navigation/native';
 
 interface ProductItemProps {
   item: {
@@ -14,10 +21,15 @@ interface ProductItemProps {
     oldPrice?: number;
   };
 }
-
 const ProductItem = ({item}: ProductItemProps) => {
+  const navigation = useNavigation();
+
+  const onPress = () => {
+    navigation.navigate('ProductDetails' , {id: item.id});
+  };
+
   return (
-    <View style={styles.root}>
+    <Pressable onPress={onPress} style={styles.root}>
       <Image
         style={styles.image}
         source={{
@@ -33,7 +45,6 @@ const ProductItem = ({item}: ProductItemProps) => {
         <View style={styles.ratingsContainer}>
           {[0, 0, 0, 0, 0].map((el, i) => (
             <FontAwesome
-             
               style={styles.star}
               name={i < Math.floor(item.avgRating) ? 'star' : 'star-o'}
               size={18}
@@ -51,7 +62,7 @@ const ProductItem = ({item}: ProductItemProps) => {
           )}
         </Text>
       </View>
-    </View>
+    </Pressable>
   );
 };
 
