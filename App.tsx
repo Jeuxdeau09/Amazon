@@ -19,6 +19,10 @@ import {
 
 import Router from './src/router_';
 
+import Amplify from 'aws-amplify';
+import config from './src/aws-exports';
+Amplify.configure(config);
+
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 const App = () => {
