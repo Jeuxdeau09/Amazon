@@ -19,9 +19,16 @@ import {
 
 import Router from './src/router_';
 
-import Amplify from 'aws-amplify';
+
+
+import Amplify, {Auth} from 'aws-amplify';
 import config from './src/aws-exports';
 Amplify.configure(config);
+
+import {withAuthenticator} from 'aws-amplify-react-native';
+
+
+
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
@@ -61,4 +68,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default withAuthenticator(App);
