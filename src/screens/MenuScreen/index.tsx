@@ -1,7 +1,7 @@
 import React from 'react';
 import {SafeAreaView} from 'react-native';
 import Buttons from '../../components/Button';
-import Auth from '@aws-amplify';
+import {Auth} from 'aws-amplify';
 
 const MenuScreen = () => {
   const onLogout = () => {
@@ -9,7 +9,7 @@ const MenuScreen = () => {
   };
 
   return (
-    <SafeAreaView>
+    <SafeAreaView> 
       <Buttons text="Sign Out" onPress={onLogout} />
     </SafeAreaView>
   );
