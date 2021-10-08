@@ -56,9 +56,9 @@ const ProductItem = ({item}: ProductItemProps) => {
         </View>
 
         <Text style={styles.price}>
-          From ${item.price}
+          From ${item.price.toFixed(2)}
           {item.oldPrice && (
-            <Text style={styles.oldPrice}> ${item.oldPrice} </Text>
+            <Text style={styles.oldPrice}> ${item.oldPrice.toFixed(2)} </Text>
           )}
         </Text>
       </View>
